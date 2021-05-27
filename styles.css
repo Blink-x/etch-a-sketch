@@ -44,8 +44,15 @@ font-family: 'Nanum Pen Script', cursive;
     cursor: crosshair;
 }
 
+.caption {
+    color: rgb(102, 97, 97);
+    margin-top: 15px;
+    font-size: 30px;
+    font-family: 'Nanum Pen Script', cursive;
+
+}
 .buttons {
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 #rgbBtn, #blkBtn, #grayBtn, #resetBtn {
