@@ -11,7 +11,7 @@ function getGrid (column, row)
     for (let i = 0; i < (column * row); i++)
     {
         const div = document.createElement('div');
-        div.style.border = '1px solid darkgray';
+        div.style.border = '1px solid lightgray';
         container.style.gridTemplateColumns = `repeat(${column}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${row}, 1fr)`;
         container.appendChild(div).classList.add('box');
@@ -19,19 +19,6 @@ function getGrid (column, row)
     
 }
 
-
-getGrid(16,16);
-turnGray();
-turnBlack();
-turnColor();
-resetGrid();
-
-
-
-
-/* selects all the created boxes via getGrid func, listens for click on gray button, if clicked
- it will listen for mouseover on any box in grid, and turn box background a random variant of gray
- if it is moused over */
 function turnGray ()
 {
     const boxes = container.querySelectorAll('.box');
@@ -74,7 +61,6 @@ function turnColor ()
 
 function resetGrid () 
 {
-
     resetBtn.addEventListener('click', () => 
     {
         let user = prompt('What size grid (1-100) would you like?')
@@ -83,16 +69,23 @@ function resetGrid ()
         if (user === null || user < 1 || user > 100) 
             {
                 alert('Only sizes between 1-100 please')
-                getGrid(16,16);
+                getGrid(16,16)
+                turnGray();
+                turnBlack();
+                turnColor();
+                resetGrid();;
                 return;
             }
         else 
             {getGrid(user,user)}
-    turnGray();
-    turnBlack();
-    turnColor();
+            turnGray();
+            turnBlack();
+            turnColor();
     })
 }
 
-
-
+getGrid(16,16);
+turnGray();
+turnBlack();
+turnColor();
+resetGrid();
