@@ -73,8 +73,6 @@ function resetGrid ()
                 turnGray();
                 turnBlack();
                 turnColor();
-                resetGrid();;
-                return;
             }
         else 
             {getGrid(user,user)}
